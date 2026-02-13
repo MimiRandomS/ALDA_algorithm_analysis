@@ -28,5 +28,6 @@ def heap_sort(arr):
     for i in range(n - 1, 0, -1):                           # O(n): loop in list
         arr[0], arr[i] = arr[i], arr[0]                     # O(1): swap
         heapify(arr, 0, i)                                # O(log n): restore heap property
+    return arr
                                                             # called n times
                                                             # total = n * log n
