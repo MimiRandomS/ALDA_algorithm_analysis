@@ -214,6 +214,47 @@ def quick_sort(arr):
 
 ---
 
+## 🔬 Best Case Analysis
+
+### Insertion Sort - Best Case O(n)
+
+When the input array is **already sorted**, Insertion Sort achieves linear time complexity because it only needs to compare each element once without performing any swaps.
+
+![Best Case Comparison](results/graphs/best_case_comparison.png)
+
+**Key observation:** The left graph shows Insertion Sort's dramatic improvement from O(n²) to O(n) when given a sorted array. The right graph confirms that Merge Sort maintains O(n log n) regardless of input order.
+
+| Algorithm | Average Case | Best Case | Improvement |
+|-----------|-------------|-----------|-------------|
+| Insertion Sort | O(n²) | O(n) | **Massive** — becomes linear |
+| Merge Sort | O(n log n) | O(n log n) | None — always divides and merges |
+
+---
+
+## ⚠️ Worst Case Analysis
+
+### Quick Sort Degrades to O(n²)
+
+When the pivot is consistently the **minimum or maximum** element (e.g., already sorted array with first-element pivot), Quick Sort degenerates to quadratic time complexity — the same as Bubble Sort.
+
+![Worst Case Comparison](results/graphs/worst_case_comparison.png)
+
+**Critical finding:** The graph demonstrates that Quick Sort's worst case is computationally equivalent to Bubble Sort's worst case, both exhibiting O(n²) behavior.
+
+| Scenario | Quick Sort | Bubble Sort |
+|----------|----------|-----------|
+| **Average/Random** | O(n log n) | O(n²) |
+| **Worst (sorted)** | O(n²) | O(n²) |
+
+This validates why production implementations use:
+- **Randomized pivots** to avoid worst-case scenarios
+- **Median-of-three** pivot selection
+- **Hybrid approaches** (switch to Insertion Sort for small subarrays)
+
+---
+
+---
+
 ## 🔍 Key Learnings
 
 1. **Theory matches practice** — experimental results confirm Big-O predictions
