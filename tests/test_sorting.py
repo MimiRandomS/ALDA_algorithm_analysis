@@ -5,7 +5,7 @@ from algorithms.merge_sort import merge_sort
 from algorithms.quick_sort import quick_sort
 from algorithms.heap_sort import heap_sort
 
-# Test cases que todos los algoritmos deben pasar
+# Test cases that all algorithms must pass
 test_cases = [
     ([], []),                           # Empty array
     ([1], [1]),                         # Single element
